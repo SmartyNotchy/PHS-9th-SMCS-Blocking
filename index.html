@@ -15,9 +15,7 @@
         <h1 id="title">PHS 9th Grade SMCS Blocking Schedule</h1>
 
         <div id="schedule_div">
-          <div id="header">
-            <p>Today's Schedule (xx/xx/xx)</p>
-          </div>
+          <p id="header">Today's Schedule (__/__/__)</p>
 
           <br>
           <br>
@@ -45,6 +43,13 @@
               <td class="table_blockB" id="b7">Loading...</td>
             </tr>
           </table>
+
+          <br>
+          <br>
+
+          <p id="footer">Notes: ___________</p>
+
+          </div>
         </div>
       </div>
     </main>
@@ -61,14 +66,22 @@
         .then((json) => updateSchedule(json.body));
 
       function updateSchedule(schedule) {
+        console.log(schedule);
         document.getElementById("a5").innerHTML = schedule[0][0];
         document.getElementById("b5").innerHTML = schedule[0][1];
         document.getElementById("a6").innerHTML = schedule[1][0];
         document.getElementById("b6").innerHTML = schedule[1][1];
         document.getElementById("a7").innerHTML = schedule[2][0];
         document.getElementById("b7").innerHTML = schedule[2][1];
+
+        if (schedule[3][0] != "") {
+          document.getElementById("footer").innerHTML = "Notes: " + schedule[3][0];
+        } else {
+          document.getElementById("footer").innerHTML = "No Extra Notes";
+        }
       }
 
+      
     </script>
   </body>
 </html>
