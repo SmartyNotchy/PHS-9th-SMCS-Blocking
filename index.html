@@ -74,7 +74,7 @@
         document.getElementById("a7").innerHTML = schedule[2][0];
         document.getElementById("b7").innerHTML = schedule[2][1];
 
-        if (schedule[3][0] != "") {
+        if (schedule[3][0] != "" && schedule[3][0] != undefined) {
           document.getElementById("footer").innerHTML = "Notes: " + schedule[3][0];
         } else {
           document.getElementById("footer").innerHTML = "No Extra Notes";
