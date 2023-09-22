@@ -1,5 +1,6 @@
 body {
     font-family: 'Inclusive Sans', sans-serif;
+    font-display: swap;
 
     background: #D4A788;
 
@@ -26,9 +27,9 @@ body {
 }
 
 #title {
-    font-size: 50px;
+    font-size: 40px;
     color: white;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 }
 
 #header {

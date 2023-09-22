@@ -25,14 +25,14 @@
         <div id="schedule_div">
           <p id="header">Today's Schedule (__/__/__)</p>
           <p id="extra_info">
-            <a href="https://tinyurl.com/9thsmcs2027">View Two Weeks Blocking History</a>
+            <a href="https://tinyurl.com/9thsmcs2027" id="two_weeks">View Two Weeks Blocking Schedule</a>
             <br>
-            <a href="https://defygg.github.io/poolesvilleschedule/">View PHS Period Schedule</a> (c. Daniel Mathew)
+            <a href="https://defygg.github.io/poolesvilleschedule/" id="phs_tracker">View PHS Period Schedule</a> (c. Daniel Mathew)
           </p>
           
           <table id="schedule_table">
             <tr>
-              <th class="table_period table_top">Period</th>
+              <th class="table_period table_top" id="table_period">Period</th>
               <th class="table_blockA table_top">Block A</th>
               <th class="table_blockB table_top">Block B</th>
             </tr>
@@ -64,6 +64,14 @@
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register("serviceworker.js");
+      }
+
+      var isMobile = navigator.userAgent.match(/Mobile/i) != null;
+      if (isMobile) {
+        document.getElementById("title").innerHTML = "9th SMCS Blocking Schedule";
+        document.getElementById("table_period").innerHTML = "P";
+        document.getElementById("two_weeks").innerHTML = "2 Weeks Blocking Schedule";
+        document.getElementById("phs_tracker").innerHTML = "PHS Tracker";
       }
 
       // Button Functions
