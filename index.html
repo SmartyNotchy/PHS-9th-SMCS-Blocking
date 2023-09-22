@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Easily view today's SMCS blocking schedule for PHS 9th Grade.">
     <title>PHS 9th Grade SMCS Blocking Schedule</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Inclusive+Sans" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="manifest.json"/>
+
     <meta name="theme-color" content="#333947"/>
   </head>
   <body>
@@ -18,15 +21,17 @@
 
         <div id="schedule_div">
           <p id="header">Today's Schedule (__/__/__)</p>
-
-          <br>
-          <br>
-
+          <p id="extra_info">
+            <a href="https://tinyurl.com/9thsmcs2027">View Two Weeks Blocking History</a>
+            <br>
+            <a href="https://defygg.github.io/poolesvilleschedule/">View PHS Period Schedule</a> (c. Daniel Mathew)
+          </p>
+          
           <table id="schedule_table">
             <tr>
-              <th class="table_period">Period</th>
-              <th class="table_blockA">Block A</th>
-              <th class="table_blockB">Block B</th>
+              <th class="table_period table_top">Period</th>
+              <th class="table_blockA table_top">Block A</th>
+              <th class="table_blockB table_top">Block B</th>
             </tr>
 
             <tr>
@@ -40,14 +45,11 @@
               <td class="table_blockB" id="b6">Loading...</td>
             </tr>
             <tr>
-              <td class="table_period">7</td>
-              <td class="table_blockA" id="a7">Loading...</td>
-              <td class="table_blockB" id="b7">Loading...</td>
+              <td class="table_period table_bottom">7</td>
+              <td class="table_blockA table_bottom" id="a7">Loading...</td>
+              <td class="table_blockB table_bottom" id="b7">Loading...</td>
             </tr>
           </table>
-
-          <br>
-          <br>
 
           <p id="footer">Notes: ___________</p>
 
