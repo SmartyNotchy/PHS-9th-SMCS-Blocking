@@ -4,9 +4,9 @@
     "start_url": ".",
     "display": "standalone",
     "description": "A quick & easy way to check today's SMCS blocking schedule.",
-    "theme_color": "#333947",
+    "theme_color": "fcd5ba",
     "prefer_related_applications": true,
-    "background_color": "#212936",
+    "background_color": "#D4A788",
     "icons": [
         {
             "src": "images/icon.png",
