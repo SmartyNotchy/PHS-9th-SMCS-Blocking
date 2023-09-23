@@ -27,7 +27,9 @@
           <p id="extra_info">
             <a href="https://tinyurl.com/9thsmcs2027" id="two_weeks">View Two Weeks Blocking Schedule</a>
             <br>
-            <a href="https://defygg.github.io/poolesvilleschedule/" id="phs_tracker">View PHS Period Schedule</a>(c. Daniel Mathew)
+            <a href="https://defygg.github.io/poolesvilleschedule/" id="phs_tracker">View PHS Period Schedule</a>
+            <br id="credits_br" style="display: none;">
+            (c. Daniel Mathew)
           </p>
           
           <table id="schedule_table">
@@ -71,7 +73,8 @@
         document.getElementById("title").innerHTML = "9th SMCS Blocking Schedule";
         document.getElementById("table_period").innerHTML = "P";
         document.getElementById("two_weeks").innerHTML = "2 Weeks Blocking Schedule";
-        document.getElementById("phs_tracker").innerHTML = "PHS Tracker\n";
+        document.getElementById("phs_tracker").innerHTML = "PHS Tracker";
+        document.getElementById("credits_br").style = "display: block;";
       }
 
       // Button Functions
