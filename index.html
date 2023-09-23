@@ -65,9 +65,19 @@
     </main>
 
     <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register("serviceworker.js");
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("sw.js").then(
+          (registration) => {
+            console.log("Service worker registration successful:", registration);
+          },
+          (error) => {
+            console.error(`Service worker registration failed: ${error}`);
+          },
+        );
+      } else {
+        console.error("Service workers are not supported.");
       }
+
 
       var isMobile = navigator.userAgent.match(/Mobile/i) != null;
       if (isMobile) {
@@ -76,11 +86,6 @@
         document.getElementById("two_weeks").innerHTML = "2 Weeks Blocking Schedule";
         document.getElementById("phs_tracker").innerHTML = "PHS Tracker";
         document.getElementById("credits_br").style = "display: block;";
-      }
-
-      // Button Functions
-      function refreshSchedule() {
-
       }
 
       // Fetch Schedule Data
