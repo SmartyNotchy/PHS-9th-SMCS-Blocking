@@ -103,14 +103,14 @@
           document.getElementById("footer").innerHTML = "No Extra Notes";
         }
 
-        const date = new Date();
+        let date = new Date();
         let weekday = date.getDay();
         if (weekday == 0 || weekday == 6) {
+          date.setDate(date.getDate() + 1);
           if (weekday == 6) {
-            const nextDate = date.addDays(1);
+            date.setDate(date.getDate() + 1);
           }
-          const nextDate = date.addDays(1);
-          document.getElementById("header").innerHTML = `Monday's Schedule (${nextDate.getMonth()+1}/${nextDate.getDate()}/${nextDate.getFullYear()})`
+          document.getElementById("header").innerHTML = `Monday's Schedule (${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()})`
         } else {
           document.getElementById("header").innerHTML = `Today's Schedule (${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()})`
         }
