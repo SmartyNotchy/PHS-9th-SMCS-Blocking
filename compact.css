@@ -29,7 +29,7 @@ body {
 #title {
     font-size: 45px;
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 #header {
@@ -52,7 +52,7 @@ a {
 #schedule_div {    
     color: white;
     /* background: #ff5050; */
-    background: RGBA(0, 0, 0, 0.3);
+    background: RGBA(0, 0, 0, 0.5);
 
     border: 2px solid white;
     /* border-collapse: collapse; */
@@ -107,4 +107,8 @@ a {
 
 #footer {
     font-size: 25px;
+}
+
+#madeby {
+    font-size: 20px;
 }
