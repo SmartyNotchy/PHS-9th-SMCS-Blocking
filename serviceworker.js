@@ -19,6 +19,7 @@ const APP_STATIC_RESOURCES = [
     "images/icon.png"
 ];
 
+/*
 // On install, cache the static resources
 self.addEventListener("install", (event) => {
   event.waitUntil(
