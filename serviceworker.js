@@ -4,7 +4,7 @@ const VERSION = "v1";
 // The name of the cache
 const CACHE_NAME = `9-smcs-blocking-${VERSION}`;
 
-///*
+/*
 // The static resources that the app needs to function.
 const APP_STATIC_RESOURCES = [
     "",
