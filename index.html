@@ -65,20 +65,6 @@
     </main>
 
     <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("serviceworker.js").then(
-          (registration) => {
-            console.log("Service worker registration successful:", registration);
-          },
-          (error) => {
-            console.error(`Service worker registration failed: ${error}`);
-          },
-        );
-      } else {
-        console.error("Service workers are not supported.");
-      }
-
-
       var isMobile = navigator.userAgent.match(/Mobile/i) != null;
       if (isMobile) {
         document.getElementById("title").innerHTML = "9th SMCS Blocking Schedule";
@@ -120,6 +106,20 @@
           document.getElementById("header").innerHTML = `Today's Schedule (${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()})`
         }
       }
+
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("serviceworker.js").then(
+          (registration) => {
+            console.log("Service worker registration successful:", registration);
+          },
+          (error) => {
+            console.error(`Service worker registration failed: ${error}`);
+          },
+        );
+      } else {
+        console.error("Service workers are not supported.");
+      }
+
 
       
     </script>
