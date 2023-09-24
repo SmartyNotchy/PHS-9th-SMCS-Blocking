@@ -7,7 +7,7 @@ body {
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.25), 
         rgba(0, 0, 0, 0.25)
-      ), url('images/morning.png');
+      ), url('images/bg.webp');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
