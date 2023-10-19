@@ -434,7 +434,7 @@
 
         for (let i = 0; i < 5; i++) {
           if (isMobile) {
-            document.getElementById(`${i}date`).innerHTML = formatDate(monday) + " (This Week " + date.toLocaleDateString("en-US", { weekday: 'long' }) + ")";
+            document.getElementById(`${i}date`).innerHTML = formatDate(monday) + " (This Week " + monday.toLocaleDateString("en-US", { weekday: 'long' }) + ")";
           } else {
             document.getElementById(`${i}date`).innerHTML = formatDate(monday);
           }
@@ -457,7 +457,7 @@
 
         for (let i = 5; i < 10; i++) {
           if (isMobile) {
-            document.getElementById(`${i}date`).innerHTML = formatDate(monday) + " (Next Week" + date.toLocaleDateString("en-US", { weekday: 'long' }) + ")";
+            document.getElementById(`${i}date`).innerHTML = formatDate(monday) + " (Next Week " + monday.toLocaleDateString("en-US", { weekday: 'long' }) + ")";
           } else {
             document.getElementById(`${i}date`).innerHTML = formatDate(monday);
           }

@@ -115,6 +115,7 @@ a {
 
 #week1content {
     text-align: center;
+    display: block;
 }
 
 #week1content .schedule_div {
@@ -145,6 +146,7 @@ a {
 
 #week2content {
     text-align: center;
+    display: block;
 }
 
 #week2content .schedule_div {
