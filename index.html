@@ -19,6 +19,7 @@
   </head>
   <body>
     <main>
+<<<<<<< HEAD
       <div id="content">
         <h1 id="title">PHS 9th Grade SMCS Blocking Schedule</h1>
 
@@ -388,17 +389,21 @@
         .then((response) => response.json())
         .then((json) => updateSchedule(json.body));
 
+      function formatDate(date) {
+        return `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`;
+      }
+
       function updateSchedule(schedule) {
         console.log(schedule);
-        document.getElementById("a5").innerHTML = schedule[0][0];
-        document.getElementById("b5").innerHTML = schedule[0][1];
-        document.getElementById("a6").innerHTML = schedule[1][0];
-        document.getElementById("b6").innerHTML = schedule[1][1];
-        document.getElementById("a7").innerHTML = schedule[2][0];
-        document.getElementById("b7").innerHTML = schedule[2][1];
+        document.getElementById("a5").innerHTML = schedule[0][0][0];
+        document.getElementById("b5").innerHTML = schedule[0][0][1];
+        document.getElementById("a6").innerHTML = schedule[0][1][0];
+        document.getElementById("b6").innerHTML = schedule[0][1][1];
+        document.getElementById("a7").innerHTML = schedule[0][2][0];
+        document.getElementById("b7").innerHTML = schedule[0][2][1];
 
-        if (schedule[3][0] != "" && schedule[3][0] != undefined) {
-          document.getElementById("footer").innerHTML = "Notes: " + schedule[3][0];
+        if (schedule[0][3][0] != "" && schedule[0][3][0] != undefined) {
+          document.getElementById("footer").innerHTML = "Notes: " + schedule[0][3][0];
         } else {
           document.getElementById("footer").innerHTML = "No Extra Notes";
         }
@@ -410,9 +415,58 @@
           if (weekday == 6) {
             date.setDate(date.getDate() + 1);
           }
-          document.getElementById("header").innerHTML = `Next Monday's Schedule (${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()})`
+          document.getElementById("header").innerHTML = `Next Monday's Schedule (${formatDate(date)})`
         } else {
-          document.getElementById("header").innerHTML = `Today's Schedule (${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()})`
+          document.getElementById("header").innerHTML = `Today's Schedule (${formatDate(date)})`
+        }
+
+        // Find the Monday
+        let monday = new Date();
+        weekday = monday.getDay();
+        if (weekday == 0 || weekday == 6) {
+          // weekends
+          monday.setDate(monday.getDate() + 1);
+          if (weekday == 6) {
+            monday.setDate(monday.getDate() + 1);
+          }
+        } else {
+          monday.setDate(monday.getDate() - weekday + 1)
+        }
+
+        for (let i = 0; i < 5; i++) {
+          document.getElementById(`${i}date`).innerHTML = formatDate(monday);
+          document.getElementById(`${i}a5`).innerHTML = schedule[i+1][0][0];
+          document.getElementById(`${i}b5`).innerHTML = schedule[i+1][0][1];
+          document.getElementById(`${i}a6`).innerHTML = schedule[i+1][1][0];
+          document.getElementById(`${i}b6`).innerHTML = schedule[i+1][1][1];
+          document.getElementById(`${i}a7`).innerHTML = schedule[i+1][2][0];
+          document.getElementById(`${i}b7`).innerHTML = schedule[i+1][2][1];
+          monday.setDate(monday.getDate() + 1);
+
+          if (schedule[i+1][3][0] != "" && schedule[i+1][3][0] != undefined) {
+            document.getElementById(`${i}footer`).innerHTML = schedule[i+1][3][0];
+          } else {
+            document.getElementById(`${i}footer`).innerHTML = "No Extra Notes";
+          }
+        }
+
+        monday.setDate(monday.getDate() + 2);
+
+        for (let i = 5; i < 10; i++) {
+          document.getElementById(`${i}date`).innerHTML = formatDate(monday);
+          document.getElementById(`${i}a5`).innerHTML = schedule[i+1][0][0];
+          document.getElementById(`${i}b5`).innerHTML = schedule[i+1][0][1];
+          document.getElementById(`${i}a6`).innerHTML = schedule[i+1][1][0];
+          document.getElementById(`${i}b6`).innerHTML = schedule[i+1][1][1];
+          document.getElementById(`${i}a7`).innerHTML = schedule[i+1][2][0];
+          document.getElementById(`${i}b7`).innerHTML = schedule[i+1][2][1];
+          monday.setDate(monday.getDate() + 1);
+
+          if (schedule[i+1][3][0] != "" && schedule[i+1][3][0] != undefined) {
+            document.getElementById(`${i}footer`).innerHTML = schedule[i+1][3][0];
+          } else {
+            document.getElementById(`${i}footer`).innerHTML = "No Extra Notes";
+          }
         }
       }
 
