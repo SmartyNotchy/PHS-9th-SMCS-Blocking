@@ -433,7 +433,11 @@
         }
 
         for (let i = 0; i < 5; i++) {
-          document.getElementById(`${i}date`).innerHTML = formatDate(monday);
+          if (isMobile) {
+            document.getElementById(`${i}date`).innerHTML = formatDate(monday) + " (This Week " + date.toLocaleDateString("en-US", { weekday: 'long' }) + ")";
+          } else {
+            document.getElementById(`${i}date`).innerHTML = formatDate(monday);
+          }
           document.getElementById(`${i}a5`).innerHTML = schedule[i+1][0][0];
           document.getElementById(`${i}b5`).innerHTML = schedule[i+1][0][1];
           document.getElementById(`${i}a6`).innerHTML = schedule[i+1][1][0];
@@ -452,7 +456,11 @@
         monday.setDate(monday.getDate() + 2);
 
         for (let i = 5; i < 10; i++) {
-          document.getElementById(`${i}date`).innerHTML = formatDate(monday);
+          if (isMobile) {
+            document.getElementById(`${i}date`).innerHTML = formatDate(monday) + " (Next Week" + date.toLocaleDateString("en-US", { weekday: 'long' }) + ")";
+          } else {
+            document.getElementById(`${i}date`).innerHTML = formatDate(monday);
+          }
           document.getElementById(`${i}a5`).innerHTML = schedule[i+1][0][0];
           document.getElementById(`${i}b5`).innerHTML = schedule[i+1][0][1];
           document.getElementById(`${i}a6`).innerHTML = schedule[i+1][1][0];
