@@ -389,7 +389,7 @@
       }
 
       // Fetch Schedule Data
-      fetch("https://smcs-blocking-api.smartynotchy.repl.co/get_data")
+      fetch("https://smartynotchy.pythonanywhere.com/")
         .then((response) => response.json())
         .then((json) => updateSchedule(json.body));
 
