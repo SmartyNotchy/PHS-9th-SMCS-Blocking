@@ -35,8 +35,8 @@
           <table class="schedule_table">
             <tr>
               <th class="table_period table_top" class="table_period" id="table_period">Period</th>
-              <th class="table_blockA table_top">Block A</th>
-              <th class="table_blockB table_top">Block B</th>
+              <th class="table_blockA table_top" id="bl1">Block _</th>
+              <th class="table_blockB table_top" id="bl2">Block _</th>
             </tr>
 
             <tr>
@@ -73,8 +73,8 @@
           <table class="schedule_table">
             <tr>
               <th class="table_period table_top" class="table_period">P</th>
-              <th class="table_blockA table_top">A</th>
-              <th class="table_blockB table_top">B</th>
+              <th class="table_blockA table_top" id="0bl1">_</th>
+              <th class="table_blockB table_top" id="0bl2">_</th>
             </tr>
 
             <tr>
@@ -103,8 +103,8 @@
           <table class="schedule_table">
             <tr>
               <th class="table_period table_top" class="table_period">P</th>
-              <th class="table_blockA table_top">A</th>
-              <th class="table_blockB table_top">B</th>
+              <th class="table_blockA table_top" id="1bl1">_</th>
+              <th class="table_blockB table_top" id="1bl2">_</th>
             </tr>
 
             <tr>
@@ -133,8 +133,8 @@
           <table class="schedule_table">
             <tr>
               <th class="table_period table_top" class="table_period">P</th>
-              <th class="table_blockA table_top">A</th>
-              <th class="table_blockB table_top">B</th>
+              <th class="table_blockA table_top" id="2bl1">_</th>
+              <th class="table_blockB table_top" id="2bl2">_</th>
             </tr>
 
             <tr>
@@ -163,8 +163,8 @@
           <table class="schedule_table">
             <tr>
               <th class="table_period table_top" class="table_period">P</th>
-              <th class="table_blockA table_top">A</th>
-              <th class="table_blockB table_top">B</th>
+              <th class="table_blockA table_top" id="3bl1">_</th>
+              <th class="table_blockB table_top" id="3bl2">_</th>
             </tr>
 
             <tr>
@@ -193,8 +193,8 @@
           <table class="schedule_table">
             <tr>
               <th class="table_period table_top" class="table_period">P</th>
-              <th class="table_blockA table_top">A</th>
-              <th class="table_blockB table_top">B</th>
+              <th class="table_blockA table_top" id="4bl1">_</th>
+              <th class="table_blockB table_top" id="4bl2">_</th>
             </tr>
 
             <tr>
@@ -228,8 +228,8 @@
           <table class="schedule_table">
             <tr>
               <th class="table_period table_top" class="table_period">P</th>
-              <th class="table_blockA table_top">A</th>
-              <th class="table_blockB table_top">B</th>
+              <th class="table_blockA table_top" id="5bl1">_</th>
+              <th class="table_blockB table_top" id="5bl2">_</th>
             </tr>
 
             <tr>
@@ -258,8 +258,8 @@
           <table class="schedule_table">
             <tr>
               <th class="table_period table_top" class="table_period">P</th>
-              <th class="table_blockA table_top">A</th>
-              <th class="table_blockB table_top">B</th>
+              <th class="table_blockA table_top" id="6bl1">_</th>
+              <th class="table_blockB table_top" id="6bl2">_</th>
             </tr>
 
             <tr>
@@ -288,8 +288,8 @@
           <table class="schedule_table">
             <tr>
               <th class="table_period table_top" class="table_period">P</th>
-              <th class="table_blockA table_top">A</th>
-              <th class="table_blockB table_top">B</th>
+              <th class="table_blockA table_top" id="7bl1">_</th>
+              <th class="table_blockB table_top" id="7bl2">_</th>
             </tr>
 
             <tr>
@@ -318,8 +318,8 @@
           <table class="schedule_table">
             <tr>
               <th class="table_period table_top" class="table_period">P</th>
-              <th class="table_blockA table_top">A</th>
-              <th class="table_blockB table_top">B</th>
+              <th class="table_blockA table_top" id="8bl1">_</th>
+              <th class="table_blockB table_top" id="8bl2">_</th>
             </tr>
 
             <tr>
@@ -348,8 +348,8 @@
           <table class="schedule_table">
             <tr>
               <th class="table_period table_top" class="table_period">P</th>
-              <th class="table_blockA table_top">A</th>
-              <th class="table_blockB table_top">B</th>
+              <th class="table_blockA table_top" id="9bl1">_</th>
+              <th class="table_blockB table_top" id="9bl2">_</th>
             </tr>
 
             <tr>
@@ -405,6 +405,8 @@
         document.getElementById("b6").innerHTML = schedule[0][1][1];
         document.getElementById("a7").innerHTML = schedule[0][2][0];
         document.getElementById("b7").innerHTML = schedule[0][2][1];
+        document.getElementById("bl1").innerHTML = "Block " + schedule[0][3][1];
+        document.getElementById("bl2").innerHTML = "Block " + schedule[0][3][2];
 
         if (schedule[0][3][0] != "" && schedule[0][3][0] != undefined) {
           document.getElementById("footer").innerHTML = "Notes: " + schedule[0][3][0];
@@ -449,6 +451,8 @@
           document.getElementById(`${i}b6`).innerHTML = schedule[i+1][1][1];
           document.getElementById(`${i}a7`).innerHTML = schedule[i+1][2][0];
           document.getElementById(`${i}b7`).innerHTML = schedule[i+1][2][1];
+          document.getElementById(`${i}bl1`).innerHTML = schedule[i+1][3][1];
+          document.getElementById(`${i}bl2`).innerHTML = schedule[i+1][3][2];
           monday.setDate(monday.getDate() + 1);
 
           if (schedule[i+1][3][0] != "" && schedule[i+1][3][0] != undefined) {
@@ -472,6 +476,8 @@
           document.getElementById(`${i}b6`).innerHTML = schedule[i+1][1][1];
           document.getElementById(`${i}a7`).innerHTML = schedule[i+1][2][0];
           document.getElementById(`${i}b7`).innerHTML = schedule[i+1][2][1];
+          document.getElementById(`${i}bl1`).innerHTML = schedule[i+1][3][1];
+          document.getElementById(`${i}bl2`).innerHTML = schedule[i+1][3][2];
           monday.setDate(monday.getDate() + 1);
 
           if (schedule[i+1][3][0] != "" && schedule[i+1][3][0] != undefined) {
